@@ -51,6 +51,7 @@ sudo sh -c 'echo "www-data ALL=NOPASSWD: ALL" >> sudo visudo'
 sudo sh -c 'echo "%sys ALL=(ALL) NOPASSWD: ALL" >> sudo visudo'
 
 cd /var/www/html/
+sudo rm -r index.html
 wget https://raw.githubusercontent.com/surendrasafepro/Sniffer-TX2/master/sniffer.php
 wget https://raw.githubusercontent.com/surendrasafepro/Sniffer-TX2/master/index.html
 wget https://raw.githubusercontent.com/surendrasafepro/Sniffer-TX2/master/jquery.min.js
