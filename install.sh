@@ -5,6 +5,8 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install cmake libjpeg8-dev
 
+echo 'System had been updated'
+
 # Mjpg-Streamer
 # Installing the Mjpg-Streamer for camera streaming
 git clone https://github.com/jacksonliam/mjpg-streamer.git
@@ -15,6 +17,8 @@ cd ../../
 sudo cp -r mjpg-streamer /usr/local/bin
 cd mjpg-streamer/mjpg-streamer-experimental
 sudo cp -r output_http.so input_uvc.so /usr/local/lib/
+
+echo 'Mjpg-streamer had been installed successfully'
 
 # coding for Camera streaming
 mkdir sniffer
