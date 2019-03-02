@@ -27,15 +27,15 @@ mkdir sniffer
 cd sniffer/
 mkdir shell
 cd shell/
-wget https://raw.githubusercontent.com/surendrasafepro/Sniffer-TX2/master/stream.sh
+wget https://raw.githubusercontent.com/surendrasafepro/Sniffer-TX2/master/Camera/stream.sh
 
 # Coding for Sniffer motion
-wget https://raw.githubusercontent.com/surendrasafepro/Sniffer-TX2/master/int.sh
-wget https://raw.githubusercontent.com/surendrasafepro/Sniffer-TX2/master/fwd.sh
-wget https://raw.githubusercontent.com/surendrasafepro/Sniffer-TX2/master/bwd.sh
-wget https://raw.githubusercontent.com/surendrasafepro/Sniffer-TX2/master/rgt.sh
-wget https://raw.githubusercontent.com/surendrasafepro/Sniffer-TX2/master/lft.sh
-wget https://raw.githubusercontent.com/surendrasafepro/Sniffer-TX2/master/stop.sh
+wget https://raw.githubusercontent.com/surendrasafepro/Sniffer-TX2/master/Motion/int.sh
+wget https://raw.githubusercontent.com/surendrasafepro/Sniffer-TX2/master/Motion/fwd.sh
+wget https://raw.githubusercontent.com/surendrasafepro/Sniffer-TX2/master/Motion/bwd.sh
+wget https://raw.githubusercontent.com/surendrasafepro/Sniffer-TX2/master/Motion/rgt.sh
+wget https://raw.githubusercontent.com/surendrasafepro/Sniffer-TX2/master/Motion/lft.sh
+wget https://raw.githubusercontent.com/surendrasafepro/Sniffer-TX2/master/Motion/stop.sh
 
 echo 'Coding for motion has been successfully done.'
 
@@ -50,11 +50,15 @@ echo 'Apache and PHP had been installed successfully'
 sudo sh -c 'echo "www-data ALL=NOPASSWD: ALL" >> sudo visudo'
 sudo sh -c 'echo "%sys ALL=(ALL) NOPASSWD: ALL" >> sudo visudo'
 
+# Creating the web server for Camera live streaming.
 cd /var/www/html/
 sudo rm -r index.html
-wget https://raw.githubusercontent.com/surendrasafepro/Sniffer-TX2/master/sniffer.php
-wget https://raw.githubusercontent.com/surendrasafepro/Sniffer-TX2/master/index.html
-wget https://raw.githubusercontent.com/surendrasafepro/Sniffer-TX2/master/jquery.min.js
+wget https://raw.githubusercontent.com/surendrasafepro/Sniffer-TX2/master/Web/sniffer.php
+wget https://raw.githubusercontent.com/surendrasafepro/Sniffer-TX2/master/Web/index.html
+wget https://raw.githubusercontent.com/surendrasafepro/Sniffer-TX2/master/Web/jquery.min.js
+
+# Initialising the streaming at the boot.
+sudo sh -c 'echo "sudo bash /home/nvidia/sniffer/shell/int.sh & sudo bash /home/nvidia/sniffer/shell/stream.sh" >> .bashrc'
 
 echo 'Hoory..! Successfully installation done.'
 
