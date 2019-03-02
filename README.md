@@ -8,4 +8,4 @@ This repository is for building Sniffer project on TX2.
   2. Direct to the Sniffer-TX2 folder. (cd Sniffer-TX2)
   3. Install the repository using the following command. (sudo bash install.sh)
   
-# Note: Accepct with 'Y' whenever you are asked to choose (Y/N).
+# Note: Accepct with 'Y' whenever you are asked to choose (Y/N), and provide the system password while installation.
