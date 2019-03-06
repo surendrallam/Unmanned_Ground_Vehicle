@@ -4,6 +4,8 @@
 sudo apt-get update 
 sudo apt-get upgrade
 sudo apt-get install cmake libjpeg8-dev
+sudo apt-get install libv4l-dev
+sudo apt-get install v4l-utils
 
 echo 'System had been updated'
 
@@ -48,7 +50,7 @@ echo 'Apache and PHP had been installed successfully'
 
 # Proving permissions for PHP to access the files
 sudo sh -c 'echo "www-data ALL=NOPASSWD: ALL" >> sudo visudo'
-sudo sh -c 'echo "%sys ALL=(ALL) NOPASSWD: ALL" >> sudo visudo'
+sudo sh -c 'echo "nvidia ALL=(ALL) NOPASSWD: ALL" >> sudo visudo'
 
 # Creating the web server for Camera live streaming.
 cd /var/www/html/
