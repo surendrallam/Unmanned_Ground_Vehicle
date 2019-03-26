@@ -1,11 +1,11 @@
 #!/bin/sh 
 
-La=396
-Lb=392
-Ra=397
-Rb=255
+Lp=389 # PWM pin of Left
+Ld=395 # Direction pin of Left
+Rp=392
+Rd=255
 
-echo 0 > /sys/class/gpio/gpio$La/value 
-echo 0 > /sys/class/gpio/gpio$Lb/value 
-echo 0 > /sys/class/gpio/gpio$Ra/value 
-echo 0 > /sys/class/gpio/gpio$Rb/value
+echo 0 > /sys/class/gpio/gpio$Lp/value 
+echo 0 > /sys/class/gpio/gpio$Ld/value 
+echo 0 > /sys/class/gpio/gpio$Rp/value 
+echo 0 > /sys/class/gpio/gpio$Rd/value
