@@ -1,0 +1,143 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sniffer@TX2</title>
+    <script type="text/javascript">
+        function send(value) {
+            var request = false;
+            if (window.XMLHttpRequest) {
+                request = new XMLHttpRequest();
+            } else if (window.ActiveXObject) {
+                try {
+                    request = new ActiveXObject("Msxml2.XMLHTTP");
+                } catch (e) {
+                    request = new ActiveXObject("Msxml.XMLHTTP");
+                }
+            }
+            //XMLHttpRequest failed
+            if (!request) {
+                alert("XMLHttpRequest failed...");
+                return false;
+            }
+            //query
+            var send = 'code=' + value;
+            request.open('POST', '/sniffer.php', true);
+            //HTML header
+            request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            //request.setRequestHeader("Content-length", send.length);
+            //request.setRequestHeader("Connection", "close");
+            //request.setRequestHeader('Content-Length',send.length);
+            //request.setRequestHeader('Connection','close');
+            request.send(send);
+        }
+    </script>
+<html> 
+<head>
+<style>
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 33px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button1 {width: 250px;}
+.button2 {width: 25%;}
+.button3 {width: 100%;}
+</style>
+</head>
+<body>
+
+</body>
+ 
+ 
+</head>
+<body>
+    <img src="http://10.42.0.1:8080/?action=stream" />
+    <br>
+    <input type="button" class="button" value="LEFT" id="left">
+    <input type="button" class="button" value="FRONT" id="front" >
+    <input type="button" class="button" value="BACK" id="back" >
+    <input type="button" class="button" value="RIGHT" id="right">
+    <!--<input type="button" class="button" value="STOP" id="stop">-->
+
+    <script src="jquery.min.js"></script>
+    <!-- <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.js"></script> -->
+
+    <script>
+ if( screen.width <= 480 ) {    
+  console.log('mobile')
+  $("#right").bind('touchstart', function () {
+                   send('right')
+                }).bind('touchend', function () {
+                   send('stop')
+                });
+                $("#left").bind('touchstart', function () {
+                   send('left')
+                }).bind('touchend', function () {
+                   send('stop')
+                });
+                $("#front").bind('touchstart', function () {
+                   send('front')
+                }).bind('touchend', function () {
+                   send('stop')
+                });
+                $("#back").bind('touchstart', function () {
+                   send('back')
+                }).bind('touchend', function () {
+                   send('stop')
+                });
+
+		$("#stop").bind('touchstart', function () {
+                   send('stop')
+                }).bind('touchend', function () {
+                   send('stop')
+                });
+
+ }else{
+  console.log('desktop')
+  $('#right').mousedown(function () {
+                send('right')
+         }).bind('mouseup mouseleave', function () {
+                 send('stop')
+             });
+             $('#front').mousedown(function () {
+                 send('front')
+             }).bind('mouseup mouseleave', function () {
+                 send('stop')
+             });
+             $('#back').mousedown(function () {
+                 send('back')
+             }).bind('mouseup mouseleave', function () {
+                 send('stop')
+             });
+             $('#left').mousedown(function () {
+                 send('left')
+             }).bind('mouseup mouseleave', function () {
+                 send('stop')
+             });
+	     $("#stop").bind('touchstart', function () {
+                 send('stop')
+             }).bind('touchend', function () {
+                 send('stop')
+             });
+ }
+        if (typeof window.orientation !== 'undefined') {
+      
+         //   window.onload = function () {
+//  console.log('for mobile')
+        //   }
+        } else {
+  //      console.log('for desktop')
+ 
+        }
+
+    </script>
+</body>
+</html>
+
