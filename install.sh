@@ -55,12 +55,11 @@ sudo sh -c 'echo "nvidia ALL=(ALL) NOPASSWD: ALL" >> sudo visudo'
 # Creating the web server for Camera live streaming.
 cd /var/www/html/
 sudo rm -r index.html
-wget https://raw.githubusercontent.com/surendrasafepro/Sniffer-TX2/master/Web/sniffer.php
-wget https://raw.githubusercontent.com/surendrasafepro/Sniffer-TX2/master/Web/index.html
-wget https://raw.githubusercontent.com/surendrasafepro/Sniffer-TX2/master/Web/jquery.min.js
+wget https://raw.githubusercontent.com/surendrasafepro/Sniffer-TX2/master/Camera/sniffer.php
+wget https://raw.githubusercontent.com/surendrasafepro/Sniffer-TX2/master/Camera/index.html
+wget https://raw.githubusercontent.com/surendrasafepro/Sniffer-TX2/master/Camera/jquery.min.js
 
 # Initialising the streaming at the boot.
-sudo sh -c 'echo "sudo bash /home/nvidia/sniffer/shell/int.sh & sudo bash /home/nvidia/sniffer/shell/stream.sh" >> .bashrc'
 
 echo 'Hoory..! Successfully installation done.'
 
