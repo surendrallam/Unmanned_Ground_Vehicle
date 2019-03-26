@@ -1,8 +1,8 @@
 #!/bin/sh 
 
-La=396
-Lb=392
-Ra=397
+La=389
+Lb=395
+Ra=392
 Rb=255
 
 echo 1 > /sys/class/gpio/gpio$La/value 
