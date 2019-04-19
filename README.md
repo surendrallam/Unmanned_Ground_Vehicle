@@ -10,7 +10,7 @@ This repository contains 3 folders.
 3. Battery (Programs to monitor the battery voltage using ADS1115)
 
 # Steps for installing the repository:
-  1. Download the repository by cloning. (git clone https://github.com/surendrasafepro/Sniffer-TX2.git)
+  1. Download the repository by cloning. (git clone git@github.com:surendrasafepro/Rover_on_TX2.git)
   2. Direct to the Sniffer-TX2 folder. (cd Sniffer-TX2)
   3. Install the repository using the following command. (sudo bash install.sh)
   4. once the installation is done, run the below commands in the Shell.
