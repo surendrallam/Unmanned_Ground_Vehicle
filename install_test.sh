@@ -30,15 +30,15 @@ mkdir sniffer
 cd sniffer/
 mkdir shell
 cd shell/
-cp camera/stream.sh stream.sh
+sudo cp -r /home/$username/sniffer/Camera/stream.sh stream.sh
 
 # Coding for Sniffer motion
-cp -r /home/$username/sniffer/motion/int.sh int.sh
-cp -r /home/$username/sniffer/motion/fwd.sh fwd.sh
-cp -r /home/$username/sniffer/motion/bwd.sh bwd.sh
-cp -r /home/$username/sniffer/motion/rgt.sh rgt.sh
-cp -r /home/$username/sniffer/motion/lft.sh lft.sh
-cp -r /home/$username/sniffer/motion/stop.sh stop.sh
+sudo cp -r /home/$username/sniffer/Motion/int.sh int.sh
+sudo cp -r /home/$username/sniffer/Motion/fwd.sh fwd.sh
+sudo cp -r /home/$username/sniffer/Motion/bwd.sh bwd.sh
+sudo cp -r /home/$username/sniffer/Motion/rgt.sh rgt.sh
+sudo cp -r /home/$username/sniffer/Motion/lft.sh lft.sh
+sudo cp -r /home/$username/sniffer/Motion/stop.sh stop.sh
 
 echo 'Coding for motion has been successfully done.'
 
@@ -57,9 +57,9 @@ sudo sh -c 'echo "nvidia ALL=(ALL) NOPASSWD: ALL" >> sudo visudo'
 # Creating the web server for Camera live streaming.
 cd /var/www/html/
 sudo rm -r index.html
-cp -r /home/$username/sniffer/camera/sniffer.php sniffer.php
-cp -r /home/$username/sniffer/camera/index.html index.html
-cp -r /home/$username/sniffer/camera/jquery.min.js jquery.min.js
+sudo cp -r /home/$username/sniffer/Camera/sniffer.php sniffer.php
+sudo cp -r /home/$username/sniffer/Camera/index.html index.html
+sudo cp -r /home/$username/sniffer/Camera/jquery.min.js jquery.min.js
 
 # Initialising the streaming at the boot.
 
