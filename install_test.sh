@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Updating, Upgrading and installing dependencies
+# Updating, Upgrading and installing required dependencies and libraries.
 sudo apt-get update 
 sudo apt-get upgrade
 sudo apt-get install cmake libjpeg8-dev
@@ -9,9 +9,7 @@ sudo apt-get install v4l-utils
 
 echo 'System had been updated'
 
-username=$(whoami)
-# Mjpg-Streamer
-# Installing the Mjpg-Streamer for camera streaming
+# Installing the Mjpg-Streamer for live-camera streaming to HTML.
 cd ~/
 git clone https://github.com/jacksonliam/mjpg-streamer.git
 cd mjpg-streamer/mjpg-streamer-experimental
@@ -37,13 +35,5 @@ sudo a2enmod mpm_prefork && sudo a2enmod php7.0
 sudo service apache2 restart
 
 echo 'Apache and PHP had been installed successfully'
-
-# Proving permissions for PHP to access the files
-sudo sh -c 'echo "www-data ALL=NOPASSWD: ALL" >> sudo visudo'
-sudo sh -c 'echo "nvidia ALL=(ALL) NOPASSWD: ALL" >> sudo visudo'
-
-# Creating the web server for Camera live streaming.
-cd /var/www/html/
-# Initialising the streaming at the boot.
 
 echo 'Hoory..! Successfully installation done.'
