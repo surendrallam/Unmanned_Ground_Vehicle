@@ -29,18 +29,6 @@ cd ~/
 mkdir sniffer
 cd sniffer/
 mkdir shell
-cd shell/
-sudo cp -r /home/$username/sniffer/Camera/stream.sh stream.sh
-
-# Coding for Sniffer motion
-sudo cp -r /home/$username/sniffer/Motion/int.sh int.sh
-sudo cp -r /home/$username/sniffer/Motion/fwd.sh fwd.sh
-sudo cp -r /home/$username/sniffer/Motion/bwd.sh bwd.sh
-sudo cp -r /home/$username/sniffer/Motion/rgt.sh rgt.sh
-sudo cp -r /home/$username/sniffer/Motion/lft.sh lft.sh
-sudo cp -r /home/$username/sniffer/Motion/stop.sh stop.sh
-
-echo 'Coding for motion has been successfully done.'
 
 # Installing Apache2 and PHP7
 cd ~/
@@ -56,11 +44,6 @@ sudo sh -c 'echo "nvidia ALL=(ALL) NOPASSWD: ALL" >> sudo visudo'
 
 # Creating the web server for Camera live streaming.
 cd /var/www/html/
-sudo rm -r index.html
-sudo cp -r /home/$username/sniffer/Camera/sniffer.php sniffer.php
-sudo cp -r /home/$username/sniffer/Camera/index.html index.html
-sudo cp -r /home/$username/sniffer/Camera/jquery.min.js jquery.min.js
-
 # Initialising the streaming at the boot.
 
 echo 'Hoory..! Successfully installation done.'
