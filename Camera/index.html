@@ -14,31 +14,24 @@
                     request = new ActiveXObject("Msxml.XMLHTTP");
                 }
             }
-            //XMLHttpRequest failed
             if (!request) {
                 alert("XMLHttpRequest failed...");
                 return false;
             }
-            //query
             var send = 'code=' + value;
             request.open('POST', '/sniffer.php', true);
-            //HTML header
             request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            //request.setRequestHeader("Content-length", send.length);
-            //request.setRequestHeader("Connection", "close");
-            //request.setRequestHeader('Content-Length',send.length);
-            //request.setRequestHeader('Connection','close');
             request.send(send);
         }
     </script>
-<html> 
+<html>
 <head>
 <style>
 .button {
   background-color: #4CAF50; /* Green */
   border: none;
   color: black;
-  padding: 15px 32px;
+  padding: 15px 29px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -49,28 +42,60 @@
 .button1 {width: 250px;}
 .button2 {width: 25%;}
 .button3 {width: 100%;}
+div.one {
+  height:100px;
+  margin-bottom:2em;
+}
+
+.one {width:100px}
+.two {width:25%}
+
+.one, .two {
+  background:linear-gradient(45deg,#ffffff 49%,#aaa 50%,#ffffff 51%);
+}
 </style>
 </head>
 <body>
 
 </body>
- 
- 
+
+
 </head>
 <body>
-    <img src="http://10.42.0.1:8080/?action=stream" />
+    <div class="parent" style="position: relative;">
+      <img src="http://192.168.0.166:8080/?action=stream" style="width:950px; height:810px;border:2px solid black" />
+      <img src="snifferlines4.png" style="position: absolute;left: 0;top: 2px;" />
+    </div>
     <br>
-    <input type="button" class="button" value="LEFT" id="left">
-    <input type="button" class="button" value="FRONT" id="front" >
-    <input type="button" class="button" value="BACK" id="back" >
-    <input type="button" class="button" value="RIGHT" id="right">
-    <!--<input type="button" class="button" value="STOP" id="stop">-->
 
+    <div style="width:640px">
+      <div style="width: 150%; text-align: center;">
+         <button style="background: transparent;outline: none;border: none;"><img src="up.png" style="width:300px;" id="front" /></button>
+      </div>
+      <div style="width: 120%;float: left;">
+        <div style="width: 38%; text-align: right;float: left;">
+          <button style="background: transparent;outline: none;border: none;"><img src="left.png" style="width:300px;cursor: pointer;" id="left" /></button>
+        </div>
+        <div style="width: 12%;float: left;"></div>
+        <div style="width: 15%; text-align: left;float: right;">
+           <button style="background: transparent;outline: none;border: none;"><img src="right.png" style="width:300px;cursor: pointer;" id="right" /></button>
+        </div>
+      </div>
+      <div style="width: 150%; text-align: center;float: left;">
+         <button style="background: transparent;outline: none;border: none;"><img src="down.png" style="width:300px;cursor: pointer;" id="back" /></button>
+      </div>
+    </div>
     <script src="jquery.min.js"></script>
-    <!-- <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.js"></script> -->
 
     <script>
- if( screen.width <= 480 ) {    
+      $("img").mousedown(function(e){
+            console.log(e)
+         e.preventDefault()
+    });
+      $("body").on("contextmenu",function(e){
+               return false;
+          });
+ if( screen.width <= 480 ) {
   console.log('mobile')
   $("#right").bind('touchstart', function () {
                    send('right')
@@ -93,7 +118,7 @@
                    send('stop')
                 });
 
-		$("#stop").bind('touchstart', function () {
+        $("#stop").bind('touchstart', function () {
                    send('stop')
                 }).bind('touchend', function () {
                    send('stop')
@@ -121,23 +146,19 @@
              }).bind('mouseup mouseleave', function () {
                  send('stop')
              });
-	     $("#stop").bind('touchstart', function () {
+         $("#stop").bind('touchstart', function () {
                  send('stop')
              }).bind('touchend', function () {
                  send('stop')
              });
  }
         if (typeof window.orientation !== 'undefined') {
-      
          //   window.onload = function () {
 //  console.log('for mobile')
         //   }
         } else {
   //      console.log('for desktop')
- 
         }
-
     </script>
 </body>
 </html>
-
