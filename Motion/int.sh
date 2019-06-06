@@ -1,19 +1,19 @@
 #!/bin/sh
 
 Lp=389 # PWM pin of Left
-Ld=395 # Direction pin of Left
+Ln=395 # Direction pin of Left
 Rp=392
-Rd=255
+Rn=255
 
 echo $Lp > /sys/class/gpio/export
-echo $Ld > /sys/class/gpio/export
+echo $Ln > /sys/class/gpio/export
 echo $Rp > /sys/class/gpio/export
-echo $Rd > /sys/class/gpio/export
+echo $Rn > /sys/class/gpio/export
 
 echo out > /sys/class/gpio/gpio$Lp/direction
-echo out > /sys/class/gpio/gpio$Ld/direction
+echo out > /sys/class/gpio/gpio$Ln/direction
 echo out > /sys/class/gpio/gpio$Rp/direction
-echo out > /sys/class/gpio/gpio$Rd/direction
+echo out > /sys/class/gpio/gpio$Rn/direction
 
 #Battery check
 
