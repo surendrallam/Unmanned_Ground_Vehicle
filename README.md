@@ -1,4 +1,4 @@
-# Sniffer on TX2
+# Sniffer on Jetson TX2
 
 Sniffer is a robotic UGV (Unmanned ground vehicle) built on neural compute platform to scan underneath of vehicles with brilliant surveillance cameras coupled with cognitive analytics to have a crystal clear view of vehicle underneath for Under Vehicle Surveillance.
 
