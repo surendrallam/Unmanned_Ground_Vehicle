@@ -20,3 +20,6 @@ This repository contains 3 folders.
 # b. sudo sh -c 'echo "www-data ALL=NOPASSWD: ALL" >> sudo visudo'
 # c. sudo sh -c 'echo "nvidia ALL=(ALL) NOPASSWD: ALL" >> sudo visudo'
 # Note: Accepct with 'Y' whenever you are asked to choose (Y/N), and provide the system password while installation and make sure to follow above mentioned steps.
+
+
+![snify](https://user-images.githubusercontent.com/45988949/62763958-63052900-baaa-11e9-96ef-e9af9e419c78.jpg)
