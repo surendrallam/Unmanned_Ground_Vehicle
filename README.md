@@ -27,4 +27,4 @@ a. sudo sh -c 'echo "sudo bash /home/nvidia/sniffer/shell/int.sh & sudo bash /ho
 b. sudo sh -c 'echo "www-data ALL=NOPASSWD: ALL" >> sudo visudo'
 c. sudo sh -c 'echo "nvidia ALL=(ALL) NOPASSWD: ALL" >> sudo visudo'
 ```
-** Note: Accepct with 'Y' whenever you are asked to choose (Y/N), and provide the system password while installation and make sure to follow above mentioned steps.**
+### Note: Accepct with 'Y' whenever you are asked to choose (Y/N), and provide the system password while installation and make sure to follow above mentioned steps.**
