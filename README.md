@@ -22,9 +22,9 @@ This repository contains 3 folders.
   4. once the installation is done, run the below commands in the Shell.
 
 ## Steps to follow after installing repository.
-'''
+```
 a. sudo sh -c 'echo "sudo bash /home/nvidia/sniffer/shell/int.sh & sudo bash /home/nvidia/sniffer/shell/stream.sh" >> .bashrc'
 b. sudo sh -c 'echo "www-data ALL=NOPASSWD: ALL" >> sudo visudo'
 c. sudo sh -c 'echo "nvidia ALL=(ALL) NOPASSWD: ALL" >> sudo visudo'
-'''
-Note: Accepct with 'Y' whenever you are asked to choose (Y/N), and provide the system password while installation and make sure to follow above mentioned steps.
+```
+** Note: Accepct with 'Y' whenever you are asked to choose (Y/N), and provide the system password while installation and make sure to follow above mentioned steps.**
